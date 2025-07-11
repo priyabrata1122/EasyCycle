@@ -1,2 +1,0 @@
-# EasyCycle
-Cycle Management System
