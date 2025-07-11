@@ -6,6 +6,7 @@ import App from './App.jsx'
 import Header from './component/Header.jsx'
 import About from './component/About.jsx'
 import FAQs from './component/FAQs.jsx'
+import Footer from './component/Footer.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -16,6 +17,7 @@ createRoot(document.getElementById('root')).render(
         <Route path='/about' element={<About/>}/>
         <Route path='/faqs' element={<FAQs/>}/>
       </Routes>
+      <Footer />
     </BrowserRouter>
   </StrictMode>,
 )
