@@ -6,7 +6,6 @@ function App() {
   return (
     <div>
       <div className='border-black border-1 rounded-2xl w-[97%] h-auto min-h-[30rem] bg-center mt-22 relative left-5 app'>
-
           <h1 className='relative top-[7rem] left-[4rem] text-white text-2xl md:text-4xl lg:text-5xl hidden sm:block md:block lg:block'>No Cycle? No Problem.</h1>
           <h2 className='relative top-[9rem] left-[4rem] text-white text-xl md:text-2xl lg:text-3xl hidden sm:block md:block lg:block'>Easily find, borrow, and ride <br /> a campus cycle whenever you need it.</h2>
           <button className='relative top-[15rem] left-[4rem] w-auto h-auto bg-white  text-2xl rounded-xl pt-2 pb-2 pl-4 pr-4 hover:bg-gray-200 hover:shadow-2xl transition-transform duration-300 transform hover:scale-105 cursor-pointer'>Get Started</button>

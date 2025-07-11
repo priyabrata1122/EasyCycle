@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import '../styles/style_header.css'
 import {Link} from 'react-router-dom'
+import {FirebaseContext} from '../context/firebase.jsx'
 
 function Header() {
+
+    const context=useContext(FirebaseContext);
+    console.log(context);
   
   return (
     <div className="header">
@@ -20,7 +24,9 @@ function Header() {
             </Link>
         </div>
 
-        <button className='signinbtn'>Sign In</button>
+        <button className='signinbtn' onClick={()=>{
+            context.signIn();
+        }}>Sign In</button>
 
     </div>
   )

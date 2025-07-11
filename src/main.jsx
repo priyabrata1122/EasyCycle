@@ -7,17 +7,20 @@ import Header from './component/Header.jsx'
 import About from './component/About.jsx'
 import FAQs from './component/FAQs.jsx'
 import Footer from './component/Footer.jsx'
+import {FirebaseProvider} from './context/firebase.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter>
-      <Header/>
-      <Routes>
-        <Route path='/' element={<App/>}/>
-        <Route path='/about' element={<About/>}/>
-        <Route path='/faqs' element={<FAQs/>}/>
-      </Routes>
-      <Footer />
-    </BrowserRouter>
+    <FirebaseProvider>
+      <BrowserRouter>
+        <Header/>
+        <Routes>
+          <Route path='/' element={<App/>}/>
+          <Route path='/about' element={<About/>}/>
+          <Route path='/faqs' element={<FAQs/>}/>
+        </Routes>
+        <Footer />
+      </BrowserRouter>
+    </FirebaseProvider>
   </StrictMode>,
 )
