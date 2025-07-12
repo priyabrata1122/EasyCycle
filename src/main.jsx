@@ -7,6 +7,7 @@ import Header from './component/Header.jsx'
 import About from './component/About.jsx'
 import FAQs from './component/FAQs.jsx'
 import Footer from './component/Footer.jsx'
+import Dashboard from './component/Dashboard.jsx'
 import {FirebaseProvider} from './context/firebase.jsx'
 
 createRoot(document.getElementById('root')).render(
@@ -18,6 +19,7 @@ createRoot(document.getElementById('root')).render(
           <Route path='/' element={<App/>}/>
           <Route path='/about' element={<About/>}/>
           <Route path='/faqs' element={<FAQs/>}/>
+          <Route path='/dashboard' element={<Dashboard/>}/>
         </Routes>
         <Footer />
       </BrowserRouter>
