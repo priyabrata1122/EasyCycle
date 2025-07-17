@@ -2,8 +2,24 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": [
+        "./src/*"
+      ]
     }
   },
-  "include": ["src"]
+  "include": [
+    "**/*.js"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
+  // {
+  //   "compilerOptions": {
+  //     "baseUrl": ".",
+  //     "paths": {
+  //       "@/*": ["src/*"]
+  //     }
+  //   },
+  //   "include": ["src"]
+  // }
