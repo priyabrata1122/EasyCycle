@@ -23,7 +23,9 @@ function App() {
 
 	const generateOnClick = async () => {
 		if (user) {
-			navigate('/dashboard');
+			setTimeout(() => {
+				navigate('/dashboard');
+			}, 200);
 		}
 		else {
 			await context.signIn();
