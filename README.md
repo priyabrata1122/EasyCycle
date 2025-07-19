@@ -1,12 +1,35 @@
-# React + Vite
+# 🚲 Campus Cycle Management System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A fully functional **Cycle Management Web Application** designed for college campuses. This system allows students to **borrow**, **lend**, and **manage** bicycles efficiently—solving the problem of cycle unavailability during emergencies or early admission periods.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🌐 Live Demo
 
-## Expanding the ESLint configuration
+> [Live Site on Vercel](easy-cycle-delta.vercel.app) — _Replace with actual link after deployment_
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend**: React.js + Tailwind CSS  
+- **Backend**: Firebase (Auth, Firestore)  
+- **Image Hosting**: Cloudinary (cycle and profile images)  
+- **Deployment**: Vercel  
+- **Design**: Fully responsive, modern UI with Tailwind CSS
+---
+
+## 📦 Features
+
+### 👨‍🎓 Student Features
+- Google Login via Firebase Authentication
+- Borrow available bicycles by hostel or system-wide
+- Lend personal cycles for public use
+- View personal profile and cycle history
+
+### 🧠 Smart Logic
+- Allocates cycles from the user's hostel first
+- Falls back to any available cycle if hostel has none
+- Repair reporting and maintenance tracking
+
+---
