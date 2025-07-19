@@ -69,12 +69,12 @@ function Lend_cycle() {
 	// console.log(lend);
 
 	return (
-		<div className='w-[97%] h-auto mt-22 mb-10 relative md:ml-5 flex flex-col items-center min-h-[37rem]'>
+		<div className='w-[97%] h-auto mt-22 mb-10 relative ml-2 md:ml-5 flex flex-col items-center min-h-[37rem]'>
 			<h1 className='text-2xl md:text-4xl font-bold'>Lend Cycle Form 🚲</h1>
 
 			<form
 				onSubmit={handleOnSubmit}
-				className="w-[65%] mt-5 p-4 shadow-xl rounded space-y-4">
+				className="w-[90%] md:w-[65%] mt-5 p-4 shadow-xl rounded space-y-4">
 				<label className="block">
 					<span className="text-gray-700 text-[17px] md:text-[25px]">Owner Name</span>
 					<input

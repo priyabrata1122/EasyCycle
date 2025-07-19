@@ -24,12 +24,12 @@ function View_cycle() {
     // console.log(cycle);
 
     return (
-        <div className='w-[97%] h-auto mt-22 mb-10 relative md:ml-5 flex flex-col items-center min-h-[34.5rem]'>
+        <div className='w-[97%] h-auto mt-22 mb-10 relative ml-2 md:ml-5 flex flex-col items-center min-h-[34.5rem]'>
             <h1 className='text-2xl md:text-4xl font-bold'>View Available Cycles 🚲</h1>
 
             {
                 cycle ?
-                    <div className='h-auto w-[90%] mt-10 flex flex-col justify-center items-center gap-10'>
+                    <div className='h-auto w-full md:w-[90%] mt-10 flex flex-col justify-center items-center gap-10'>
                         {
                             cycle.map((item, idx) => (
                                 <div key={idx} className="w-[90%] bg-gray-200 rounded-2xl p-4 flex flex-col md:flex-row items-center justify-around gap-4 md:gap-12 transition-transform duration-300 transform hover:scale-103 hover:shadow-2xl hover:bg-red-100">

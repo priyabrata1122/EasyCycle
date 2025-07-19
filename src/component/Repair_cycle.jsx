@@ -92,7 +92,7 @@ function Repair_cycle() {
     };
 
     return (
-        <div className='w-[97%] h-auto mt-22 mb-10 relative md:ml-5 flex flex-col items-center min-h-[34.5rem]'>
+        <div className='w-[97%] h-auto mt-22 mb-10 relative ml-2 md:ml-5 flex flex-col items-center min-h-[34.5rem]'>
             <h2 className="text-xl md:text-2xl font-bold">🔧 Report Cycle for Repair</h2>
             <form
                 onSubmit={handleOnSubmit}
