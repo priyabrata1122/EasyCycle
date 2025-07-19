@@ -11,6 +11,7 @@ import Dashboard from './component/Dashboard.jsx'
 import Lend_cycle from './component/Lend_cycle'
 import View_cycle from './component/View_cycle'
 import { FirebaseProvider } from './context/firebase.jsx'
+import Repair_cycle from './component/Repair_cycle'
 import { Toaster } from "sonner";
 
 createRoot(document.getElementById('root')).render(
@@ -26,6 +27,7 @@ createRoot(document.getElementById('root')).render(
           <Route path='/dashboard' element={<Dashboard />} />
           <Route path='/dashboard/lend_cycle' element={<Lend_cycle />} />
           <Route path='/dashboard/view_cycle' element={<View_cycle />} />
+          <Route path='/dashboard/repair_cycle' element={<Repair_cycle/>}/>
         </Routes>
         <Footer />
       </BrowserRouter>
