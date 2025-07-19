@@ -58,7 +58,7 @@ function Borrow_cycle() {
             }
 
             setSelectedCycle(selected);
-            console.log(selectedCycle);
+            // console.log(selectedCycle);
         }
         catch (err) {
             console.log(err);
