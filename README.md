@@ -6,7 +6,7 @@ A fully functional **Cycle Management Web Application** designed for college cam
 
 ## 🌐 Live Demo
 
-> [Live Site on Vercel](easy-cycle-delta.vercel.app) — _Replace with actual link after deployment_
+> [Live Site on Vercel](easy-cycle-delta.vercel.app)
 
 ---
 
