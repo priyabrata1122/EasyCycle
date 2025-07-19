@@ -1,5 +1,8 @@
 import React, { useContext, useState } from 'react'
 import { FirebaseContext } from '../context/firebase.jsx'
+import { addDoc, collection, serverTimestamp } from 'firebase/firestore'
+import { toast } from 'sonner'
+import { useNavigate } from 'react-router-dom'
 
 function getVisTime(isUrgent) {
     const now = new Date();
@@ -41,7 +44,9 @@ function Repair_cycle() {
         hostel: "",
         isUrgent: false,
     });
-
+    const [visTime, setVisTime] = useState(null);
+    const [fault, setFault] = useState([]);
+    const navigate = useNavigate();
 
     const handleOnChange = (field, value) => {
         setRepair({
@@ -50,12 +55,48 @@ function Repair_cycle() {
         });
     }
 
-    // console.log(repair);
+    const handleOnSubmit = async (e) => {
+        e.preventDefault();
+
+        const { visitTime, visitDate } = getVisTime(repair.isUrgent);
+
+        const dataToUpload = {
+            ...repair,
+            dateReported: serverTimestamp(),
+            status: "Pending",
+            visitTime: visitTime,
+            visitDate: visitDate,
+        };
+
+        try {
+            await addDoc(collection(db, "Repairs"), dataToUpload);
+            toast.success(`Repair request submitted! Visit Shop by ${visitTime}.`);
+
+            setVisTime(visitTime);
+            setFault(dataToUpload);
+
+            setRepair({
+                cycleID: "",
+                issue: "",
+                hostel: "",
+                isUrgent: false,
+            });
+
+            console.log(fault);
+            console.log(visTime);
+        }
+        catch (err) {
+            console.log("Failed to submit request : ", err);
+            toast.error('Failed to submit repair request. Please try again.');
+        }
+    };
 
     return (
-        <div className='w-[97%] h-auto mt-22 mb-10 relative left-5 flex flex-col items-center min-h-[34.5rem]'>
-            <h2 className="text-2xl font-bold">🔧 Report Cycle for Repair</h2>
-            <form className="w-[65%] mt-5 p-4 shadow-xl rounded space-y-4">
+        <div className='w-[97%] h-auto mt-22 mb-10 relative md:ml-5 flex flex-col items-center min-h-[34.5rem]'>
+            <h2 className="text-xl md:text-2xl font-bold">🔧 Report Cycle for Repair</h2>
+            <form
+                onSubmit={handleOnSubmit}
+                className="w-[95%] md:w-[65%] mt-5 p-4 shadow-xl rounded space-y-4">
 
                 <label className="block">
                     <span className="text-gray-700 text-[17px] md:text-[25px]">Cycle ID</span>
@@ -130,6 +171,30 @@ function Repair_cycle() {
                     Submit Repair Request
                 </button>
             </form>
+
+            {
+                visTime ?
+                    <>
+                        <h1 className='text-xl md:text-2xl font-bold mt-5'>Repair Time Slot</h1>
+                        <div className='w-auto h-auto mt-5 p-5 rounded-2xl bg-gray-200 shadow-2xl'>
+                            <h1 className='md:text-xl'>CycleID : {fault.cycleID}</h1>
+                            <h1 className='md:text-xl'>Hostel : {fault.hostel}</h1>
+                            <h1 className='md:text-xl'>Issue : {fault.issue}</h1>
+                            <h1 className='md:text-xl font-bold'>Visit Date and Time : {visTime}</h1>
+                        </div>
+                    </>
+                    :
+                    <div></div>
+            }
+
+            <button
+                onClick={() => {
+                    setTimeout(() => {
+                        navigate('/dashboard');
+                    }, 200);
+                }}
+                className='relative mt-5 ml-[45%] md:ml-[53%] cursor-pointer text-[0.9rem] md:text-[1.1rem] hover:text-blue-700'>Back to Dashboard</button>
+
         </div>
     )
 }

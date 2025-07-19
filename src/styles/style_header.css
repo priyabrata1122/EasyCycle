@@ -1,7 +1,6 @@
-.header{
+.header {
   position: fixed;
   z-index: 3;
-  left: 1.5rem;
   top: 0.5rem;
   width: 96.5%;
   height: 4rem;
@@ -14,38 +13,38 @@
 
 /* .header: */
 
-.logoname{
-  font-family:cursive;
+.logoname {
+  font-family: cursive;
   font-weight: bold;
   /* font-size: 1.9rem; */
   cursor: pointer;
   transition: transform 0.3s ease;
 }
 
-.logoname:hover{
-    transform: scale(1.05);
+.logoname:hover {
+  transform: scale(1.05);
 }
 
-.navbar{
+.navbar {
   display: flex;
   justify-content: space-between;
   /* width: 9rem; */
   /* border: 1px solid; */
 }
 
-.navbar h1{
+.navbar h1 {
   /* font-size: 1.2rem; */
   font-weight: bold;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   cursor: pointer;
   transition: transform 0.3s ease;
 }
 
-.navbar h1:hover{
-    transform: scale(1.1);
+.navbar h1:hover {
+  transform: scale(1.1);
 }
 
-.signinbtn{
+.signinbtn {
   /* width: 7rem;
   height: 2.7rem; */
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -57,7 +56,7 @@
   transition: transform 0.3s ease;
 }
 
-.signinbtn:hover{
+.signinbtn:hover {
   background-color: rgb(34, 34, 34);
   transform: scale(1.05);
 }
